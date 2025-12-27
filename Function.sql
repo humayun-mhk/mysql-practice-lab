@@ -1,0 +1,20 @@
+-- FUNCTION 
+
+
+DELIMITER //
+
+CREATE FUNCTION square_it (x INT)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    RETURN x * x;
+END//
+
+DELIMITER ;
+
+
+SELECT 
+	unit_price,
+    square_it(unit_price)
+from
+	dim_product
